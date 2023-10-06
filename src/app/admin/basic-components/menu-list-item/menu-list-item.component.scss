@@ -1,0 +1,54 @@
+@import './../../../../variable.scss';
+.active {
+    border-radius: 30px !important;
+    background: rgb(234, 248, 255);
+ 
+  
+  }
+  .icons {
+    margin-right: 12px;
+    width: 20px;
+  }
+  .menu-list-item{
+    font-family: $medium;
+    font-weight: 400;
+    font-size: 14px;
+    color: #000000!important;
+  
+  }
+  .material-icons{
+    margin-top: 4px;
+  }
+  .popupMenuWithChildren{
+  background: #FFFFFF;
+  border-radius: 6px;
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.06);
+  }
+  .popupMenuWithChildrenTitle{
+    background: #F6FBFE;
+    border-radius: 6px;
+  }
+  .listDimension{
+    width: 221px;
+  
+  }
+  .popupMenuWithChildren>.mat-list-base{
+  padding-top: 0px;
+  }
+  ::ng-deep .listDimension>.mat-list-item>.mat-list-item-content{
+    display: block;
+    line-height: 48px;
+    text-align: center;
+  }
+  .menu-list-item ~ .popupMenuWithChildren{
+    display: inline-flex;
+    transition: all 0s ease 1s; 
+    visibility: hidden;
+  }
+  .menu-list-item:hover .popupMenuWithChildren{
+    transition-delay: 0s;
+    visibility: visible;
+  }
+  .popupMenuWithChildren:hover{
+    visibility: visible;
+  }

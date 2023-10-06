@@ -1,0 +1,46 @@
+<header>
+  <nav>
+    <div class="outer header-back">
+      <div class="row" style="height: 60px">
+        <div class="col-lg-6"><h3 class="title pt-3">Overview</h3></div>
+        <div class="col-lg-6">
+          <div class="datebox d-flex">
+            <div class="">
+              <div class="border message">
+                <img src="assets/images/email.png" alt="" />
+              </div>
+            </div>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <!-- <mat-label>This month</mat-label> -->
+              <div class="d-flex">
+                <div>
+                  <img
+                    src="assets/images/calendar.png"
+                    class="pt-2 pe-1"
+                    alt=""
+                  />
+                </div>
+                <div class="pt-2">
+                  <input
+                    matInput
+                    [matDatepicker]="picker"
+                    placeholder="This month"
+                  />
+                  <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+                </div>
+                <div>
+                  <mat-datepicker-toggle matIconSuffix [for]="picker">
+                    <mat-icon matDatepickerToggleIcon
+                      >keyboard_arrow_down</mat-icon
+                    >
+                  </mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </div>
+              </div>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>

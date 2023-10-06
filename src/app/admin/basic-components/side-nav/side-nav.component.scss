@@ -1,0 +1,45 @@
+// @import "../../../../variable.scss";
+
+.icons{
+  margin-right: 12px;
+  width: 20px;
+}
+
+.mat-nav-list .mat-list-item:hover{
+    // background-color: $secondary-color;
+}
+.mat-nav-list {
+    overflow-y: auto;
+    max-height: 85vh;
+    overflow-x: hidden;
+}
+::ng-deep .mat-drawer-inner-container {
+    overflow: hidden;
+}
+
+@media (max-height: 800px) {
+    .mat-nav-list {
+        overflow-y: auto;
+        height: 74vh;
+    }
+}
+.signout_div {
+  padding: 0px 4px 0px 16px;
+  color: #98A1BD;
+  font-size: 14px;
+  margin-top: 6px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+@media (min-height: 800px) {
+    .mat-nav-list {
+        overflow-y: auto;
+        height: 74vh;
+    }
+}
+.popup_msg{
+    background: #546E7D;
+    border-radius: 6px;
+}

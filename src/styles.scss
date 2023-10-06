@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import './variable.scss';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.outer{
+    padding-left: 40px;
+    padding-right: 30px;
+  }
+  .mat-drawer-content{
+    background: #edf3ff;
+  }
+  .heading{
+    font-size: 12px;
+    font-family: $semibold;
+    font-weight: 500;
+    color:#8c8c8e
+}

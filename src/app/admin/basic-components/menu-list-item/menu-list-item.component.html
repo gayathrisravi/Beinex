@@ -1,0 +1,86 @@
+<!--   -->
+<div class="mt-3 mb-3"  (mouseleave)="hideHoverMessage(item)">
+  <a
+    (mouseleave)="hideHoverMessageOnSwitching(item)"
+    mat-list-item
+    [ngStyle]="{ 'padding-left': depth * 20 + 'px' }"
+    (click)="onItemSelected(item)"
+    [ngClass]="{
+      active: item.route ? router.isActive(item.route, true) : false,
+      expanded: expanded
+    }"
+    class="menu-list-item"
+    (mouseenter)="showHoverMessage($event, item)"
+  >
+    <img
+      src="{{ item.iconName }}"
+      alt=""
+      class="icons"
+      width="15"
+      *ngIf="!router.isActive(item.route, true)"
+    />
+    <img
+      src="{{ item.iconSelected }}"
+      alt=""
+      class="icons"
+      width="15"
+      *ngIf="router.isActive(item.route, true)"
+    />
+    <div style="display: contents" *ngIf="showContent">
+      {{ item.displayName || "" }}
+      <span fxFlex *ngIf="item.children && item.children.length">
+        <span fxFlex></span>
+        <mat-icon [@indicatorRotate]="expanded ? 'expanded' : 'collapsed'">
+          expand_more
+        </mat-icon>
+      </span>
+    </div>
+  </a>
+  <div *ngIf="!showContent">
+    <div style="position: fixed" (mouseover)="delayMouseEvent()">
+      <div
+        style="position: fixed; left: 100px; bottom: 49px"
+        *ngIf="messageShowValidator[item.index] && item.children.length"
+        class="popupMenuWithChildren"
+      >
+        <div class="popupMenuWithChildrenTitle">
+          {{ item.displayName }}
+        </div>
+        <div>
+          <mat-action-list class="listDimension">
+            <button
+              mat-list-item
+              *ngFor="let i of item.children"
+              (click)="routeToMenuPage(i)"
+            >
+              {{ i.displayName }}
+            </button>
+          </mat-action-list>
+        </div>
+      </div>
+    </div>
+    <div style="position: fixed" (mouseover)="delayMouseEvent()">
+      <div
+        style="position: relative; left: 100px; bottom: 49px"
+        *ngIf="messageShowValidator[item.index] && !item.children.length"
+        class="popupMenuWithChildren"
+      >
+        <mat-action-list class="listDimension">
+          <button mat-list-item (click)="routeToMenuPage(item)">
+            {{ item.displayName }}
+          </button>
+        </mat-action-list>
+      </div>
+    </div>
+  </div>
+  <span *ngIf="showContent">
+    <div *ngIf="expanded">
+      <app-menu-list-item
+        *ngFor="let child of item.children"
+        [item]="child"
+        [depth]="depth + 1"
+      >
+      </app-menu-list-item>
+    </div>
+  </span>
+</div>

@@ -1,0 +1,16 @@
+<div class="outer">
+  <div class="row main">
+    <div class="col-lg-12 mt-3 pt-3 mb-3 pb-3">
+      <app-details-layout [item]="graph_index"></app-details-layout>
+    </div>
+    <div class="col-lg-8">
+      <app-graph-layout
+        [item]="dataValues"
+        (itemEvent)="getIndex($event)"
+      ></app-graph-layout>
+    </div>
+    <div class="col-lg-4">
+      <app-network-layout></app-network-layout>
+    </div>
+  </div>
+</div>

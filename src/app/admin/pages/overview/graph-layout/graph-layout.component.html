@@ -1,0 +1,68 @@
+<div class="graphbg p-3">
+  <h6 class="tabheading">Performance</h6>
+  <div class="maintab">
+    <mat-tab-group
+      animationDuration="0ms"
+      (selectedTabChange)="onTabChange($event)"
+    >
+      <mat-tab label="Pageviews">
+        <apx-chart
+          [series]="chartoptions.series"
+          [chart]="chartoptions.chart"
+          [colors]="chartoptions.colors"
+          [yaxis]="chartoptions.yaxis"
+          [dataLabels]="commonOptions.dataLabels"
+          [markers]="commonOptions.markers"
+          [stroke]="commonOptions.stroke"
+          [grid]="commonOptions.grid"
+          [xaxis]="commonOptions.xaxis"
+          [tooltip]="commonOptions.tooltip"
+        ></apx-chart>
+      </mat-tab>
+      <mat-tab label="Clicks">
+        <apx-chart
+          [series]="chartoptions.series"
+          [chart]="chartoptions.chart"
+          [colors]="chartoptions.colors"
+          [yaxis]="chartoptions.yaxis"
+          [dataLabels]="commonOptions.dataLabels"
+          [markers]="commonOptions.markers"
+          [stroke]="commonOptions.stroke"
+          [grid]="commonOptions.grid"
+          [xaxis]="commonOptions.xaxis"
+          [tooltip]="commonOptions.tooltip"
+        ></apx-chart>
+      </mat-tab>
+      <mat-tab label="Conversations">
+        <h5>No Data Available</h5>
+        <!-- <apx-chart
+      [series]="chartoptions.series"
+      [chart]="chartoptions.chart"
+      [colors]="chartoptions.colors"
+      [yaxis]="chartoptions.yaxis"
+      [dataLabels]="commonOptions.dataLabels"
+      [markers]="commonOptions.markers"
+      [stroke]="commonOptions.stroke"
+      [grid]="commonOptions.grid"
+      [xaxis]="commonOptions.xaxis"
+      [tooltip]="commonOptions.tooltip"
+    ></apx-chart> -->
+      </mat-tab>
+      <mat-tab label="Commission">
+        <h5>No Data Available</h5>
+        <!-- <apx-chart
+      [series]="chartoptions.series"
+      [chart]="chartoptions.chart"
+      [colors]="chartoptions.colors"
+      [yaxis]="chartoptions.yaxis"
+      [dataLabels]="commonOptions.dataLabels"
+      [markers]="commonOptions.markers"
+      [stroke]="commonOptions.stroke"
+      [grid]="commonOptions.grid"
+      [xaxis]="commonOptions.xaxis"
+      [tooltip]="commonOptions.tooltip"
+    ></apx-chart> -->
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>

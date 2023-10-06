@@ -1,0 +1,23 @@
+<div
+  class="text-center align-items-center header_div"
+  style="margin-top: -10px"
+>
+  <a href="#" target="_self" rel="noopener noreferrer">
+    <img
+      src="assets/images/dash-logo.png"
+      alt="sts-logo"
+      style="margin: auto; padding-bottom: 14px"
+  /></a>
+</div>
+<hr class="mt-0 mb-0" style="color: #ebeff2" />
+
+<mat-nav-list class="justify-content-center d-flex">
+  <div>
+    <app-menu-list-item
+      *ngFor="let item of menuItems; let i = index"
+      [item]="item"
+      [showContent]="showContent"
+    >
+    </app-menu-list-item>
+  </div>
+</mat-nav-list>

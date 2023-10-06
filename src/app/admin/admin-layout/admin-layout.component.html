@@ -1,0 +1,31 @@
+<mat-drawer-container class="drawer-container" autosize fullscreen>
+  <mat-drawer
+    #drawer
+    class="sidenav-menu mt-0 pt-0"
+    mode="side"
+    #sidenav
+    id="sidenav"
+    [class.menu-open]="isMenuOpen"
+    [class.menu-close]="!isMenuOpen"
+    opened
+  >
+    <div style="float: right">
+      <button (click)="onToolbarMenuToggle()" class="menu-btn" >
+        <img src="assets/images/menu.png" alt="" *ngIf="!isMenuOpen" />
+        <img src="assets/images/close.png" alt="" *ngIf="isMenuOpen" />
+      </button>
+   
+    </div>
+    <app-side-nav
+      [ngStyle]="{ 'margin-left.px': contentMargin }"
+      [showContent]="showContent"
+    ></app-side-nav>
+  </mat-drawer>
+  <div>
+    <div class="header-main">
+      <app-header></app-header>
+    </div>
+
+    <router-outlet></router-outlet>
+  </div>
+</mat-drawer-container>
